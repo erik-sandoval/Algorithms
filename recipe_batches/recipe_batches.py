@@ -18,6 +18,14 @@ def recipe_batches(recipe, ingredients):
     # if there is not return 0 else continue
     # take ingredients amount and dive my recipe keys
 
+    if not (set(recipe) == set(ingredients)):
+        return 0
+    min = 99999999999
+    for key, value in recipe.items():
+        currVal = ingredients[key] // value
+        if (currVal < min):
+            min = currVal
+
     return min
 
 # if __name__ == '__main__':
