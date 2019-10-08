@@ -14,10 +14,32 @@ he can eat 1 cookie 1 way, 2 cookies 2 ways, and 3 cookies 4 ways.
 
 counter = 0
 
+
 def eating_cookies(n, cache=None):
     # keep count of how many ways there is for him to eat x amount of cookies
     # possible recursion, set up a basecase
     global counter
+    if (n < 0):
+        return
+
+    if (n == 0):
+        return 1
+
+    if (n == 1):
+        print('1 hit')
+        counter += 1
+
+    if (n == 2):
+        print('2 hit')
+        counter += 1
+
+    if (n == 3):
+        print('3 hit')
+        counter += 1
+
+    eating_cookies(n-1)
+    eating_cookies(n-2)
+    eating_cookies(n-3)
 
     return counter
 
