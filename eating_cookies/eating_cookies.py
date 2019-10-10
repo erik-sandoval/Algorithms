@@ -17,14 +17,14 @@ cache = [0 for i in range(501)]
 
 def eating_cookies(n, cache={}):
 
-    if (n <= 0):
-        return 1
-
-    if (n == 1):
+    if (n <= 1):
         return 1
 
     if (n == 2):
         return 2
+
+    if (n == 3):
+        return 4
 
     if n in cache:
         return cache[n]
