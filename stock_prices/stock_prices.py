@@ -9,9 +9,11 @@ and selling price, I should return that value.
 """
 
 # O(n^2)
+
+
 def find_max_profit(prices):
     # have a variable that hold that max selling point.
-    max = -99999999999999999
+    max = prices[1] - prices[0]
 
     # use a for loop to iterate through the values
     for i in range(len(prices)):
