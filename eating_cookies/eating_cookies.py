@@ -13,8 +13,7 @@ he can eat 1 cookie 1 way, 2 cookies 2 ways, and 3 cookies 4 ways.
 """
 
 
-def eating_cookies(n, cache=None):
-
+def eating_cookies(n, cache={}):
     if (n <= 0):
         return 1
 
@@ -24,10 +23,17 @@ def eating_cookies(n, cache=None):
     if (n == 2):
         return 2
 
-    return eating_cookies(n-1) + eating_cookies(n-2) + eating_cookies(n-3)
+    if n in cache:
+        return cache[n]
+
+    else:
+        res = eating_cookies(n-1, cache) + eating_cookies(n-2,
+                                                          cache) + eating_cookies(n-3, cache)
+        cache[n] = res
+        return cache[n]
 
 
-print(eating_cookies(3))
+# print(eating_cookies(999))
 
 
 # if __name__ == "__main__":
