@@ -24,13 +24,10 @@ def eating_cookies(n, cache=None):
     if (n == 2):
         return 2
 
-    if (n == 3):
-        return 4
-
     return eating_cookies(n-1) + eating_cookies(n-2) + eating_cookies(n-3)
 
 
-print(eating_cookies(0))
+print(eating_cookies(3))
 
 
 # if __name__ == "__main__":
