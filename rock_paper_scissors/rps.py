@@ -28,6 +28,15 @@ solution.
 
 def rock_paper_scissors(n):
 
+    def rps_helper(rps_ele, arr=[]):
+        if (len(arr) > n):
+            return arr
+        arr.append(rps_ele)
+        rps_helper(rps_ele, arr)
+        return arr
+
+    return rps_helper('rock', []) + rps_helper('paper', []) + rps_helper('scissors', [])
+
 
 print(rock_paper_scissors(2))
 
